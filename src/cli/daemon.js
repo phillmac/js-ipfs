@@ -29,7 +29,7 @@ class Daemon {
   async start () {
     this._log('starting')
 
-    const libp2p = { modules: {}, config: {} }
+    const libp2p = { modules: {}, config: {dht: {enabled: true} } }
 
     // Attempt to use any of the WebRTC versions available globally
     let electronWebRTC
