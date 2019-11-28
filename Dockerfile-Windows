@@ -4,6 +4,11 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';$ProgressPrefe
 
 ARG NODE_VERSION="v12.13.1"
 
+ENV IPFS_WRTC_LINUX_WINDOWS=1
+ENV IPFS_MONITORING=1
+ENV IPFS_PATH=/jsipfs
+ENV IPFS_API_HOST=0.0.0.0
+
 RUN powershell -NoProfile -Command " \
     Invoke-WebRequest -OutFile nodejs.zip -UseBasicParsing """https://nodejs.org/dist/$Env:NODE_VERSION/node-$Env:NODE_VERSION-win-x64.zip"""; \
     Expand-Archive nodejs.zip -DestinationPath C:\; \
