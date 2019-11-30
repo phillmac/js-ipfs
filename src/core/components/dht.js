@@ -127,6 +127,8 @@ module.exports = (self) => {
             log.error(err)
             throw errcode(err, 'ERR_INVALID_CID')
           }
+        } else {
+          console.info(`typeof key is ${typeof keys[i] }`)
         }
       }
 
